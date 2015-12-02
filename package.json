@@ -1,0 +1,22 @@
+{
+  "name": "react-reflux-cjsx-webapp-boilerplate",
+  "version": "0.1.0-alpha.1",
+  "description": "A starting point for React-based web applications written in CoffeeScript",
+  "scripts": {
+    "clear": "rm -rf ./dist && mkdir ./dist",
+    "build": "npm install && npm run clear && browserify -t coffee-reactify --extension='.cjsx' ./source/main.cjsx > ./dist/app.js",
+    "develop": "npm install && npm run clear && watchify -v -t coffee-reactify  ./source/main.cjsx --extension='.cjsx' --extension='.coffee' --outfile ./dist/app.js"
+  },
+  "author": "Alex Cabrera <alex@droptype.com>",
+  "license": "Unlicense",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "coffee-reactify": "^4.0.0",
+    "watchify": "^3.6.1"
+  },
+  "dependencies": {
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "reflux": "^0.3.0"
+  }
+}
